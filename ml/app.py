@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import utils
+import bert
 
 app = Flask(__name__)
 CORS(app)
@@ -8,9 +8,10 @@ CORS(app)
 
 @app.post("/api/tokenize")
 def predict():
-    sentence = request.json["sentence"]
-    sentence = utils.remove_control_words(sentence)
-    results = utils.find_symptoms(sentence)
+    jsonData = request.json if request.json is not None else {}
+    sentence = jsonData["sentence"]
+    sentence = bert.remove_control_words(sentence)
+    results = bert.find_symptoms(sentence)
     print(results)
 
     return jsonify({"tokens": results})

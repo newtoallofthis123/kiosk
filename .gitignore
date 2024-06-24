@@ -6,3 +6,5 @@ ml/bin
 ml/include
 ml/lib
 ml/lib64
+ml/*.pkl
+ml/*.csv

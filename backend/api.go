@@ -179,6 +179,7 @@ func (s *Server) Start() error {
 	r.GET("/records/:id", s.handleGetRecord)
 	r.GET("/records", s.handleListRecords)
 	r.GET("/generate", s.handleSubscribe)
+	r.POST("/prompt", s.handlerConstructPrompt)
 
 	err := r.Run(s.Addr)
 	if err != nil {

@@ -15,8 +15,6 @@ type Env struct {
 	dbHost     string
 	dbPort     string
 	ListenAddr string
-	Mail       string
-	MailPass   string
 }
 
 func NewEnv() *Env {
@@ -28,8 +26,6 @@ func NewEnv() *Env {
 		dbHost:     getEnv("DB_HOST"),
 		dbPort:     getEnv("DB_PORT"),
 		ListenAddr: getEnv("LISTEN_ADDR"),
-		Mail:       getEnv("MAIL"),
-		MailPass:   getEnv("MAIL_PASSWORD"),
 	}
 }
 

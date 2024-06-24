@@ -15,7 +15,7 @@ def find_symptoms(sentence):
     symptoms = get_symptoms()
 
     matched = process.extract(sentence, symptoms)
-    for symptom, score in matched:
+    for symptom, score in matched: # type: ignore
         if score > 80:
             matched_symptoms.add(symptom)
 
